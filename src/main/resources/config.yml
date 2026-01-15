@@ -1,0 +1,21 @@
+# Creative Tracker Configuration
+
+web:
+  # Enable the web interface
+  enabled: true
+  # Port for the web server (access via http://your-ip:port)
+  port: 6745
+
+tracking:
+  # Track items taken from creative inventory
+  creative-inventory: true
+  # Track /give command usage
+  give-command: true
+  # Track /gamemode changes (for logging purposes)
+  gamemode-command: true
+
+storage:
+  # Auto-save interval in seconds
+  auto-save-interval: 300
+  # Maximum number of logs to keep (oldest are removed when exceeded)
+  max-logs: 10000

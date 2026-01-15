@@ -1,0 +1,27 @@
+name: CreativeTracker
+version: ${project.version}
+main: com.wayc.creativetracker.CreativeTracker
+api-version: '1.21'
+folia-supported: true
+description: Track creative mode item acquisition with in-game GUI and web interface
+authors:
+  - WAYC
+
+commands:
+  creativetracker:
+    description: Open the Creative Tracker GUI
+    usage: /<command> [reload|webpassword <password>]
+    permission: creativetracker.use
+    aliases:
+      - ct
+
+permissions:
+  creativetracker.use:
+    description: Allows access to the Creative Tracker GUI
+    default: op
+  creativetracker.admin:
+    description: Allows admin functions like reload and password changes
+    default: op
+  creativetracker.bypass:
+    description: Players with this permission are not tracked
+    default: false
