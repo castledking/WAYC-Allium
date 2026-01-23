@@ -118,7 +118,7 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICE
   <img src="https://cdn.emeraldhost.de/branding/icon/icon.png" width="80" alt="Emerald Host Logo">
 </a>
 
-### Powered by Emerald Host
+### Powered by EmeraldHost
 
 *DDoS-Protection, NVMe Performance und 99.9% Uptime.* *Der Host meines Vertrauens für alle Development-Server.*
 
