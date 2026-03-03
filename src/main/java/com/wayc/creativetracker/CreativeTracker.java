@@ -96,7 +96,8 @@ public class CreativeTracker extends JavaPlugin {
     private boolean registerAlliumListener() {
         if (Bukkit.getPluginManager().getPlugin("Allium") == null) return false;
         try {
-            Class<?> eventClass = Class.forName("net.survivalfun.core.events.ItemGiveEvent");
+            @SuppressWarnings("unchecked")
+            Class<? extends Event> eventClass = (Class<? extends Event>) Class.forName("net.survivalfun.core.events.ItemGiveEvent");
             Listener listener = new Listener() {};
             Bukkit.getPluginManager().registerEvent(eventClass, listener, EventPriority.MONITOR,
                     (l, event) -> onAlliumItemGive(event), this, false);
