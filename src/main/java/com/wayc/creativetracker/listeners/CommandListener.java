@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 public class CommandListener implements Listener {
 
     private final CreativeTracker plugin;
+    private final boolean skipGiveCommands;
 
     private static final Pattern GIVE_PATTERN = Pattern.compile(
             "^/?give\\s+(\\S+)\\s+(\\S+)(?:\\s+(\\d+))?",
@@ -26,8 +27,9 @@ public class CommandListener implements Listener {
             "^/?i(?:tem)?\\s+(\\S+)(?:\\s+(\\d+))?",
             Pattern.CASE_INSENSITIVE);
 
-    public CommandListener(CreativeTracker plugin) {
+    public CommandListener(CreativeTracker plugin, boolean skipGiveCommands) {
         this.plugin = plugin;
+        this.skipGiveCommands = skipGiveCommands;
     }
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
@@ -57,6 +59,7 @@ public class CommandListener implements Listener {
     }
 
     private void processCommand(String command, String executorName, Player executor) {
+        if (skipGiveCommands) return;
         Matcher giveMatcher = GIVE_PATTERN.matcher(command);
         if (giveMatcher.find()) {
             String targetName = giveMatcher.group(1);

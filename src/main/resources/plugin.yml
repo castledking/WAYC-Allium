@@ -6,6 +6,8 @@ folia-supported: true
 description: Track creative mode item acquisition with in-game GUI and web interface
 authors:
   - WAYC
+soft-depend: [Allium]
+loadafter: [Allium]
 
 commands:
   creativetracker:
