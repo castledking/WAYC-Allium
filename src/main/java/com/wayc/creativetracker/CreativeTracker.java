@@ -109,6 +109,9 @@ public class CreativeTracker extends JavaPlugin {
     }
 
     private void onAlliumItemGive(Event event) {
+        if (!getConfig().getBoolean("tracking.give-command", true)) {
+            return;
+        }
         try {
             Player target = (Player) event.getClass().getMethod("getTarget").invoke(event);
             ItemStack item = (ItemStack) event.getClass().getMethod("getItem").invoke(event);
